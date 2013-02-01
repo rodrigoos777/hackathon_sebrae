@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Hackathon</title>
+        <link rel="stylesheet" href="css/custom.css" />
+        <link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.0.custom.min.css" />
+        <script type='text/javascript' src='js/jquery-1.9.0.min.js'></script>
+        <script type='text/javascript' src='js/jquery-ui-1.10.0.custom.min.js'></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var width = $(document).width() - 33;
+                var height = $(document).height() - 53;
+                $('.box').css('width', width + 'px');
+                $('.box').css('height', height + 'px');
+                
+                $('.titulos').css('width', width + 'px');
+                
+                $('.upbox').css('width', (width / 5 - 0.6) + 'px');
+                $('.upbox').css('height', (height / 3) * 2 + 'px');
+                
+                $('.downbox').css('width', (width / 2 - 1) + 'px');
+                $('.downbox').css('height', (height / 3) + 'px');
+                
+                $('.upbox .frame').css('height', (height/6)*2 - 0 + 'px');
+                
+                $('.box').fadeIn('slow');
+                
+                $('.postit').bind('click',function(){
+                   var nota = '<div class="nota ui-widget-content draggable"><div class="nota-header ui-widget-header"><a class="delete" href="#">excluir</a></div><textarea></textarea></div>';
+                   $('#box1').append(nota);
+                   $('.nota').draggable({
+                       
+                   });
+                   $('.nota').resizable();
+                   
+                   $('.delete').unbind('click');
+                   
+                   $('.delete').bind('click',function(){
+                       if(confirm('Tem certeza?')){
+                           $($(this).parent().parent().get(0)).remove();
+                       }
+                        
+                    });
+                    
+                    
+                    
+                });
+                
+                $('#help').dialog({
+                    modal: true,
+                    width: 500,
+                    height: 400
+                });
+                
+                $('.frame').droppable({
+                    hoverClass: 'frame-hover',
+                    drop: function(event,ui){
+                        $(ui.draggable).appendTo(this);
+                        $(ui.draggable).css('position','fixed');
+                        $(ui.draggable).css('top',event.pageY - 10);
+                        $(ui.draggable).css('left',event.pageX - 15);
+                    }
+                });
+                
+                
+            });
+        </script>
+        <div class="titulos">
+            <div class="postit" title="Nova nota"></div>
+            
+            <span class="quanto">QUANTO?</span>
+            <span class="paraque">PARA QUEM?</span>
+            <span class="como">COMO?</span>
+            <span class="oque">O QU&Ecirc;?</span>
+        </div>
+        <div class="clear"></div>
+        <div class="box">
+            <div id="box1" class="upbox frame como">
+                <span>Parcerias Principais</span>
+            </div>
+            
+            <div class="upbox">
+                <div id="box2" class="frame como">
+                    <span>Atividades Principais</span>
+                </div>
+                <div id="box3" class="frame como">
+                    <span>Recursos Principais</span>
+                </div>
+            </div>
+            <div id="box4" class="upbox frame oque">
+                <span>Proposta de Valor</span>
+            </div>
+            <div class="upbox">
+                <div id="box5" class="frame paraque">
+                    <span>Relacionamento com Clientes</span>
+                </div>
+                <div id="box6" class="frame paraque">
+                    <span>Canais</span>
+                </div>
+            </div>
+            <div id="box7" class="upbox frame paraque">
+                <span>Segmento de Clientes</span>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div id="box8" class="downbox frame quanto">
+                <span>Estrutura de Custos</span>
+            </div>
+            <div id="box9" class="downbox frame quanto">
+                <span>Receitas</span>
+            </div>
+            
+        </div>
+        
+        <div id="help" title="Bem vindo ao Canvas">
+            <p>
+                Para usar o Canvas &eacute; bem simples: <br/><br/>
+                
+                Para inserir uma nota no quadro clique no quadrado amarelo no canto superior esquero da tela.<br/>
+                <img src="img/img1.png" /><br/>
+                
+                A nota criada pode ser movimentada de um quadro at&eacute; outro clicando e arrastando no cabe&ccedil;alho da nota. 
+                Pode tamb&eacute;m ser posteriormente exclu&iacute;da clicando na a&ccedil;&atilde;o "excluir" tamb&eacute;m localizada no cabe&ccedil;alho da nota.
+                <br/>
+                <img src="img/img2.png" />
+                <br/><br/>
+                
+                Implementada por <b>Rodrigo Santos </b>
+                <br/>rodrigoos777@gmail.com
+            </p>
+        </div>
+    </body>
+</html>

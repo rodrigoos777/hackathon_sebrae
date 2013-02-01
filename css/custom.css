@@ -1,0 +1,147 @@
+/* 
+    Document   : custom
+    Created on : 31/01/2013, 22:08:53
+    Author     : Rodrigo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html {
+    background-color: #dadada;
+}
+
+.frame{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 0px;
+    border-top: 0px;
+    height: 50%;
+}
+
+.frame span{
+    font-family: sans-serif;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    opacity: 0.4;
+    font-size: 18px;
+}
+
+.titulos{
+    margin-left: 10px;
+}
+
+.titulos span {
+    float:right;
+    clear:none;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 3px;
+    border: 1px solid white;
+}
+
+.titulos .postit {
+    float:left;
+    clear:none;
+    background-color: yellow;
+    height: 25px;
+    width: 25px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.box {
+    margin: 10px;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 0px;
+    border-right: 0px;
+    background-color: black;
+    display: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.upbox {
+    /* width: 20%; */
+    /* height: 50%; */
+    clear: none;
+    float: left;
+
+}
+
+
+.downbox {
+/*    width: 50%; */
+    /* height: 50%; */
+    clear: none;
+    float: left;
+}
+
+.como{
+    background-color: #5099CD;
+}
+
+.oque {
+    background-color: #1279C3;
+}
+
+.paraque{
+    background-color: #3EAC8C;
+}
+
+.quanto{
+    background-color: #0E5C94;
+}
+
+.nota{
+    width: 80px;
+    height: 90px;
+    border: 1px solid orange;
+    background: #fcefa1;
+    opacity: 1;
+    position: relative;
+}
+
+.nota-header{
+    height: 15px;
+    text-align: right;
+    
+    cursor: move;
+ }
+ 
+ .delete{
+     vertical-align: top;
+    height: 15px;
+    font-size: 9px;
+    text-align: right;
+    text-decoration: none;
+    color: #366097;
+ }
+ 
+ .nota textarea{
+     width: 98%;
+     height: 82%;
+     resize: none;
+ }
+
+ .frame-hover{
+     opacity: 0.6;
+ }
+ 
+ #help p {
+     font-size: 12px;
+     font-family: sans-serif;
+ }
